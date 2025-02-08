@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #F5F6F8;
   --foreground: #171717;
 }
 
@@ -17,9 +17,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--black);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,4 +38,15 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+:root {
+	--black: #3B434E;
+	--white: white;
+	--primary: #7653FC;
+	--red: #FC836D;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
+	--font-family: "Noto Sans", sans-serif;
+
 }
