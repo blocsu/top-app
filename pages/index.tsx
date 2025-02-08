@@ -1,4 +1,4 @@
-import { Htag } from '@/components';
+import { Button, Htag } from '@/components';
 import { JSX } from 'react';
 
 // const geistSans = Geist({
@@ -15,6 +15,8 @@ export default function Home(): JSX.Element {
   return (
       <>
         <Htag tag='h1'>Text</Htag>
+				<Button appearance='primary'>Кнопка</Button>
+				<Button appearance='ghost'>Кнопка</Button>
       </>
     
   );
