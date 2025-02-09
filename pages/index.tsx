@@ -15,8 +15,8 @@ export default function Home(): JSX.Element {
   return (
       <>
         <Htag tag='h1'>Text</Htag>
-				<Button appearance='primary' className='asasas'>Кнопка</Button>
-				<Button appearance='ghost'>Кнопка</Button>
+				<Button appearance='primary' arrow='right' className='asasas'>Узнать подробнее</Button>
+				<Button appearance='ghost' arrow='down'>Читать отзывы</Button>
       </>
     
   );
