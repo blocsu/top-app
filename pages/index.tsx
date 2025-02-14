@@ -1,5 +1,5 @@
 import { Button, Htag, P, Tag } from '@/components';
-import { JSX } from 'react';
+import { JSX, useState } from 'react';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -12,10 +12,11 @@ import { JSX } from 'react';
 // });
 
 export default function Home(): JSX.Element {
+	const [counter, setCounter] = useState<number>(0);
   return (
       <>
-        <Htag tag='h1'>Text</Htag>
-				<Button appearance='primary' arrow='right' className='asasas'>Узнать подробнее</Button>
+        <Htag tag='h1'>{counter}</Htag>
+				<Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Узнать подробнее</Button>
 				<Button appearance='ghost' arrow='down'>Читать отзывы</Button>
 				<P size='l'>Большой</P>
 				<P>Средний</P>
