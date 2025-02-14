@@ -1,5 +1,5 @@
 import { Button, Htag, P, Tag } from '@/components';
-import { JSX, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -13,6 +13,17 @@ import { JSX, useState } from 'react';
 
 export default function Home(): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
+
+	useEffect(() => {
+		console.log('Counter ' + counter);
+		return function cleanup() {
+			console.log('Unmount');
+		};		
+	})
+
+	useEffect(() => {
+		console.log('Mounted ' + counter);		
+	}, [])
   return (
       <>
         <Htag tag='h1'>{counter}</Htag>
