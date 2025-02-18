@@ -1,4 +1,4 @@
-import { Button, Htag, P, Tag } from '@/components';
+import { Button, Htag, P, Rating, Tag } from '@/components';
 import { JSX, useEffect, useState } from 'react';
 
 // const geistSans = Geist({
@@ -22,8 +22,10 @@ export default function Home(): JSX.Element {
 	})
 
 	useEffect(() => {
+		if (counter > 0) {	}
 		console.log('Mounted ' + counter);		
 	}, [])
+
   return (
       <>
         <Htag tag='h1'>{counter}</Htag>
@@ -37,6 +39,7 @@ export default function Home(): JSX.Element {
 				<Tag size='s' color='green'>Green</Tag>
 				<Tag color='grey'>Grey</Tag>
 				<Tag color='primary'>Primary</Tag>
+				<Rating rating={4} />
       </>
     
   );
