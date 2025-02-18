@@ -13,6 +13,7 @@ import { JSX, useEffect, useState } from 'react';
 
 export default function Home(): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
+	const [rating, setRating] = useState<number>(4);
 
 	useEffect(() => {
 		console.log('Counter ' + counter);
@@ -39,8 +40,7 @@ export default function Home(): JSX.Element {
 				<Tag size='s' color='green'>Green</Tag>
 				<Tag color='grey'>Grey</Tag>
 				<Tag color='primary'>Primary</Tag>
-				<Rating rating={4} />
-      </>
-    
+				<Rating rating={rating} isEditable setRating={setRating} />
+      </>    
   );
 }
