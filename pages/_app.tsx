@@ -14,6 +14,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
 				<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
       </Head>
-		<Component {...pageProps} />;
+		<Component {...pageProps} />
 	</>
 }

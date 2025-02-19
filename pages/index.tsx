@@ -1,4 +1,5 @@
 import { Button, Htag, P, Rating, Tag } from '@/components';
+import { Layout } from '@/Layout/Layout';
 import { JSX, useEffect, useState } from 'react';
 
 // const geistSans = Geist({
@@ -28,8 +29,8 @@ export default function Home(): JSX.Element {
 	}, [])
 
   return (
-      <>
-        <Htag tag='h1'>{counter}</Htag>
+      <Layout>
+        <Htag tag='h1'>Заголовок {counter}</Htag>
 				<Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Узнать подробнее</Button>
 				<Button appearance='ghost' arrow='down'>Читать отзывы</Button>
 				<P size='l'>Большой</P>
@@ -41,6 +42,6 @@ export default function Home(): JSX.Element {
 				<Tag color='grey'>Grey</Tag>
 				<Tag color='primary'>Primary</Tag>
 				<Rating rating={rating} isEditable setRating={setRating} />
-      </>    
+      </Layout>    
   );
 }
