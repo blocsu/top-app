@@ -1,5 +1,5 @@
 import { Button, Htag, P, Rating, Tag } from '@/components';
-import { Layout } from '@/Layout/Layout';
+import { withLayout } from '@/Layout/Layout';
 import { JSX, useEffect, useState } from 'react';
 
 // const geistSans = Geist({
@@ -12,7 +12,7 @@ import { JSX, useEffect, useState } from 'react';
 //   subsets: ["latin"],
 // });
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
 	const [rating, setRating] = useState<number>(4);
 
@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
 	}, [])
 
   return (
-      <Layout>
+      <>
         <Htag tag='h1'>Заголовок {counter}</Htag>
 				<Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Узнать подробнее</Button>
 				<Button appearance='ghost' arrow='down'>Читать отзывы</Button>
@@ -42,6 +42,8 @@ export default function Home(): JSX.Element {
 				<Tag color='grey'>Grey</Tag>
 				<Tag color='primary'>Primary</Tag>
 				<Rating rating={rating} isEditable setRating={setRating} />
-      </Layout>    
+      </>    
   );
 }
+
+export default withLayout(Home);
