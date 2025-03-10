@@ -12,7 +12,7 @@ export interface MenuItem {
 	_id: {
 		secondCategory: string;
 	};
-	isOpened: boolean;
+	isOpened?: boolean;
 	pages: PageItem[];
 }
 

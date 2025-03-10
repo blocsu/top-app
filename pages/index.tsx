@@ -1,6 +1,6 @@
 import { Button, Htag, P, Rating, Tag } from '@/components';
 import { MenuItem } from '@/interfaces/menu.interface';
-import { withLayout } from '@/Layout/Layout';
+import { withLayout } from '@/layout/Layout';
 import axios from 'axios';
 import { GetStaticProps } from 'next';
 import { JSX, useEffect, useState } from 'react';
