@@ -1,4 +1,4 @@
-import { Button, Htag, P, Rating, Tag } from '@/components';
+import { Button, Htag, Input, P, Rating, Tag } from '@/components';
 import { MenuItem } from '@/interfaces/menu.interface';
 import { withLayout } from '@/layout/Layout';
 import axios from 'axios';
@@ -45,6 +45,7 @@ function Home({menu}: HomeProps): JSX.Element {
 				<Tag color='grey'>Grey</Tag>
 				<Tag color='primary'>Primary</Tag>
 				<Rating rating={rating} isEditable setRating={setRating} />
+				<Input />
       </>    
   );
 }
