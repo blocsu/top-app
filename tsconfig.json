@@ -22,6 +22,6 @@
 		"next-env-custom.d.ts",
 		"images.d.ts",
 		"**/*.ts", 
-		"**/*.tsx"],
+		"**/*.tsx", "components/Divider/.props.ts"],
   "exclude": ["node_modules"]
 }
