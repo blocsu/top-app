@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* config options here*/
 	images: {
-		domains: ['courses-top.ru']
+		domains: ['old-images.hb.ru-msk.vkcs.cloud', 'courses-top.ru']
 	},
 	webpack(config, options) {
 		config.module.rules.push({
