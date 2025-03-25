@@ -1,4 +1,5 @@
 import { declOfNum, priceRu } from '@/helpers/helpers';
+import cn from 'classnames';
 import Image from 'next/image';
 import { JSX } from 'react';
 import { Button } from '../Button/Button';
@@ -19,7 +20,6 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
 					alt={product.title} 
 					width={70}
 					height={70}
-					layout='responsive'
 				/>
 			</div>
 			<div className={styles.title}>{product.title}</div>
@@ -56,7 +56,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
 					<div>{product.disadvantages}</div>
 				</div>}
 			</div>
-			<Divider className={styles.hr} />
+			<Divider className={cn(styles.hr, styles.hr2)} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
 				<Button appearance='ghost' arrow='right' className={styles.revewButton}>Читать отзывы</Button>
