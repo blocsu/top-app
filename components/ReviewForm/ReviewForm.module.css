@@ -49,6 +49,8 @@
 	position: absolute;
 	top: 20px;
 	right: 20px;
+	border: 0;
+	background: none;
 }
 
 .error .close path {
