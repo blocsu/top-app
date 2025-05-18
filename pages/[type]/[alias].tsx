@@ -13,29 +13,32 @@ import { JSX } from 'react';
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
 	return <>
-		<Head>
-			<title>{page.metaTitle}</title>
-			<meta name="description" content={page.metaDescription} />
-			<meta property="og:title" content={page.metaTitle} />
-			<meta property="og:description" content={page.metaDescription} />
-			<meta property="og:type" content="article" />
-		</Head>
-		<TopPageComponent 
-			firstCategory={firstCategory}
-			page={page}
-			products={products}
-		/></>;
+		{page && products && <>			
+			<Head>
+				<title>{page.metaTitle}</title>
+				<meta name="description" content={page.metaDescription} />
+				<meta property="og:title" content={page.metaTitle} />
+				<meta property="og:description" content={page.metaDescription} />
+				<meta property="og:type" content="article" />
+			</Head>
+			<TopPageComponent
+				firstCategory={firstCategory}
+				page={page}
+				products={products}
+			/></>
+		}
+	</>;
 }
 
 export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	let paths: string[] = [];
+	const paths: string[] = [];
 	for (const m of firstLevelMenu) {
 		const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
 			firstCategory: m.id
 		});
-		paths: paths.concat(menu.flatMap(s => s.pages.map(p => `/${m.route}/${p.alias}`)))
+		paths: paths.concat(menu.flatMap(s => s.pages.map(p => `/${m.route}/${p.alias}`)));
 	}
 	return {
 		paths,
@@ -49,7 +52,7 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: G
 			notFound: true
 		};
 	}
-	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type)
+	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type);
 	if (!firstCategoryItem) {
 		return {
 			notFound: true

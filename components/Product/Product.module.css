@@ -14,21 +14,28 @@
 	grid-column: titlestart / middle;
 }
 
-.price, .priceTitle {
+.price, 
+.priceTitle {
 	grid-column: pricestart / priceend;
+
+	white-space: nowrap;
 }
 
-.credit, .creditTitle {
+.credit, 
+.creditTitle {
 	grid-column: creditstart / creditend;
-	white-space: nowrap;
 }
 
-.rating, .rateTitle {
+.rating, 
+.rateTitle {
 	grid-column: ratestart / end;
+
 	white-space: nowrap;
 }
 
-.hr, .description, .actions {
+.hr, 
+.description, 
+.actions {
 	grid-column: start / end;
 }
 
@@ -36,29 +43,27 @@
 	grid-column: start / middle;
 }
 
-.advBlock {
-	grid-column: middle / end;
-}
-
 .logo img {
 	border-radius: 5px;
 }
 
 .title {
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 27px;
 	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
 }
 
 .category {
 	margin-top: 7px;
 }
 
-.price, .credit {
+.price, 
+.credit {
+	align-self: flex-end;
 	font-size: 20px;
 	line-height: 27px;
-	align-self: flex-end;
 }
 
 .month {
@@ -88,15 +93,21 @@
 	line-height: 19px;
 }
 
+.reviewButton {
+	margin-left: 20px;
+}
+
 .advBlock {
 	font-size: 16px;
 	line-height: 22px;
+	grid-column: middle / end;
+	/* grid-area: advBlock; */
 }
 
 .advTitle {
 	font-weight: bold;
-	font-size: 16px;
-	line-height: 22px;
+	/* font-size: 16px;
+	line-height: 22px; */
 	margin-bottom: 5px;
 }
 
@@ -109,10 +120,6 @@
 .disadvantages {
 	border-left: 2px solid var(--red);
 	padding-left: 15px;
-}
-
-.revewButton {
-	margin-left: 20px;
 }
 
 .characteristics {
@@ -208,10 +215,6 @@
 	.feature {
 		grid-area: feature;
 		margin-bottom: 20px;
-	}
-
-	.advBlock {
-		grid-area: advBlock;	
 	}
 
 	.hr2 {

@@ -10,13 +10,13 @@ export const Up = (): JSX.Element => {
 
 	useEffect(() => {
 		controls.start({ opacity: y / document.body.scrollHeight });
-	}, [y, controls])
+	}, [y, controls]);
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
 			behavior: 'smooth'
-		})
-	}
+		});
+	};
 	return (
 		<motion.div 
 			className={styles.up}

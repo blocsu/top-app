@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
 	{rules: {
 		"semi": "off",
-		"@typescript-eslint/semi": [
+		"@/semi": [
 			"warn"
 		],
 		"@typescript-eslint/no-empty-interface": [

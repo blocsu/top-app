@@ -16,26 +16,20 @@ import { JSX, useEffect, useState } from 'react';
 //   subsets: ["latin"],
 // });
 
-function Home({menu}: HomeProps): JSX.Element {
-	const [counter, setCounter] = useState<number>(0);
+function Home({menu}: HomeProps): JSX.Element {	
 	const [rating, setRating] = useState<number>(4);
 
-	useEffect(() => {
-		console.log('Counter ' + counter);
+	useEffect(() => {		
 		return function cleanup() {
 			console.log('Unmount');
+			console.log(menu);	
 		};		
-	})
-
-	useEffect(() => {
-		if (counter > 0) {	}
-		console.log('Mounted ' + counter);		
-	}, [])
-
+	});
+	
   return (
       <>
-        <Htag tag='h1'>Заголовок {counter}</Htag>
-				<Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Узнать подробнее</Button>
+        <Htag tag='h1'>Заголовок</Htag>
+				<Button appearance='primary' arrow='right'>Узнать подробнее</Button>
 				<Button appearance='ghost' arrow='down'>Читать отзывы</Button>
 				<P size='l'>Большой</P>
 				<P>Средний</P>
@@ -58,16 +52,16 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0;
 	const {data: menu} = await axios.post<MenuItem[]>(API.topPage.find, {
 		firstCategory
-	})
+	});
 	return {
 		props: {
 			menu,
 			firstCategory
 		}
-	}
-}
+	};
+};
 
 interface HomeProps extends Record<string, unknown> {
-	menu: MenuItem[],
-	firstCategory: number
+	menu: MenuItem[];
+	firstCategory: number;
 }

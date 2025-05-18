@@ -6,7 +6,7 @@ import { CardProps } from './Card.props';
 
 export const Card = forwardRef(({color = 'white', children, className, ...props}: CardProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	return (
-		<div className={cn(styles.white, className, {
+		<div className={cn(styles.card, className, {
 			[styles.blue]: color == 'blue'
 		})} 
 			ref={ref}
@@ -15,3 +15,5 @@ export const Card = forwardRef(({color = 'white', children, className, ...props}
 		</div>
 	);
 });
+
+Card.displayName = 'Card';

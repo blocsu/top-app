@@ -9,7 +9,7 @@ export const Button = ({appearance, arrow = 'none', children, className, ...prop
 	const scale = useMotionValue(1);
 
 	useEffect(() => {
-		scale.on('change', (s) => {console.log(s)})
+		scale.on('change', (s) => {console.log(s);});
 	}, []);
 	return (
 		<motion.button

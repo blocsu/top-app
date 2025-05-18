@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
 			notFound: true
 		};
 	}
-	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type)
+	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type);
 	if (!firstCategoryItem) {
 		return {
 			notFound: true
@@ -39,16 +39,16 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
 	}
 	const {data: menu} = await axios.post<MenuItem[]>(API.topPage.find, {
 		firstCategory: firstCategoryItem.id
-	})
+	});
 	return {
 		props: {
 			menu,
 			firstCategory: firstCategoryItem.id
 		}
-	}
-}
+	};
+};
 
 interface TypeProps extends Record<string, unknown> {
-	menu: MenuItem[],
-	firstCategory: number
+	menu: MenuItem[];
+	firstCategory: number;
 }

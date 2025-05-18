@@ -17,14 +17,14 @@ export const Search = ({className, ...props}: SearchProps): JSX.Element => {
 			query: {
 				q: search
 			}
-		})
+		});
 	};
 
 	const handleKeyDown = (e: KeyboardEvent) => {
 		if(e.key == 'Enter') {
 			goToSearch();
 		}
-	}
+	};
 
 	const [search, setSearch] = useState<string>('');
 	return (
